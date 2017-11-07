@@ -1,0 +1,14 @@
+{
+  "name": "TodoList",
+  "version": "1.0.0",
+  "description": "Simple App",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "author": "Salman",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^1.7.9"
+  }
+}
