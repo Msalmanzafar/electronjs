@@ -16,7 +16,7 @@ app.on('ready', () => {
   });
 
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
+    pathname: path.join(__dirname, 'app.html'),
     protocol: 'file',
     slashes: true
   }));
@@ -30,19 +30,19 @@ app.on('ready', () => {
 
 // handele new Item
 function createAddWindow() {
-  addWindow = new BrowserWindow({
-    width: 300,
-    height: 200,
-  });
+//   addWindow = new BrowserWindow({
+//     width: 300,
+//     height: 200,
+//   });
 
-  addWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'addWindow.html'),
-  }));
+//   addWindow.loadURL(url.format({
+//     pathname: path.join(__dirname, 'addWindow.html'),
+//   }));
 
-  addWindow.on('close',()=>{
-    addWindow = null;
-  })
-  
+//   addWindow.on('close',()=>{
+//     addWindow = null;
+//   })
+  alert("wrking")
 }
 
 ipcMain.on('item:add', (e,item)=>{
@@ -77,24 +77,24 @@ const mainMenuTemplate = [
   }
 ]
 
-// if(process.platform == 'darwin'){
-//   mainMenuTemplate.unshift({});
-// }
+if(process.platform == 'darwin'){
+  mainMenuTemplate.unshift({});
+}
 
-// if(process.env.NODE_ENV !== 'production'){
-//   mainMenuTemplate.push({
-//     label: 'Developer Tools',
-//     submenu:[
-//       {
-//         label: 'Toggle Devtools',
-//         accelerator: process.platform == 'darwin' ? 'Command+I' : 'Ctrl+I',
-//         click(item, focuseWindow){
-//           focuseWindow.toggleDevTools();
-//         }
-//       },
-//       {
-//         role: 'reload'
-//       }
-//     ]
-//   })
-// }
+if(process.env.NODE_ENV !== 'production'){
+  mainMenuTemplate.push({
+    label: 'Developer Tools',
+    submenu:[
+      {
+        label: 'Toggle Devtools',
+        accelerator: process.platform == 'darwin' ? 'Command+I' : 'Ctrl+I',
+        click(item, focuseWindow){
+          focuseWindow.toggleDevTools();
+        }
+      },
+      {
+        role: 'reload'
+      }
+    ]
+  })
+}
