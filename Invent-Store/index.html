@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <title>Inventory Store</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            /* background-color: #cccccc; */
+        }
+
+        .main {
+            position: relative;
+            top: 40px;
+            /* color: white */
+        }
+
+        .label1 {
+            font-size: 130% !important;
+        }
+    </style>
+</head>
+
+<body>
+    <nav style="background-color: #04a192">
+        <div class="nav-wrapper">
+            <a class="brand-logo center">Invent Store</a>
+        </div>
+    </nav>
+
+    <div class="container main">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="email" type="email" class="validate">
+                <label class="active label1" for="email" data-error="wrong" data-success="right">Email</label>
+            </div>
+
+            <div class="input-field col s12">
+                <input id="password" type="password" class="validate">
+                <label class="active label1" for="password">Password</label>
+            </div>
+            <div class="col s3 offset-s9">
+                <button class="btn waves-effect waves-light" type="button" onclick="submitForm()" name="action">
+                    Log in
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="./app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>
+
+</html>

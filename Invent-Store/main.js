@@ -16,7 +16,7 @@ app.on('ready', () => {
   });
 
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'app.html'),
+    pathname: path.join(__dirname, 'index.html'),
     protocol: 'file',
     slashes: true
   }));
@@ -30,19 +30,19 @@ app.on('ready', () => {
 
 // handele new Item
 function createAddWindow() {
-//   addWindow = new BrowserWindow({
-//     width: 300,
-//     height: 200,
-//   });
+  addWindow = new BrowserWindow({
+    width: 350,
+    height: 250,
+  });
 
-//   addWindow.loadURL(url.format({
-//     pathname: path.join(__dirname, 'addWindow.html'),
-//   }));
+  addWindow.loadURL(url.format({
+    pathname: path.join(__dirname, 'addWindow.html'),
+  }));
 
-//   addWindow.on('close',()=>{
-//     addWindow = null;
-//   })
-  alert("wrking")
+  addWindow.on('close',()=>{
+    addWindow = null;
+  })
+  
 }
 
 ipcMain.on('item:add', (e,item)=>{
